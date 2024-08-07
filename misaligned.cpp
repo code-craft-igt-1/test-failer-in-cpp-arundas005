@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <iostream>
+#include "misaligned.h"
 
 int printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
@@ -11,11 +12,4 @@ int printColorMap() {
         }
     }
     return i * j;
-}
-
-int main() {
-    int result = printColorMap();
-    assert(result == 25);
-    std::cout << "All is well (maybe!)\n";
-    return 0;
 }
