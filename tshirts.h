@@ -1,3 +1,3 @@
 #pragma once
 
-char size(int cms);
+char tshirtSizeFromSholderWidthInCMS(int cms);
