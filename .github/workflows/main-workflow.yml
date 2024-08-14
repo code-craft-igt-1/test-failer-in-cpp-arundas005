@@ -15,15 +15,15 @@ jobs:
 
     - name: tshirts fail
       run: |
-        g++ -Wall -Wextra -Werror tshirts.cpp -o tshirts.out
+        g++ -Wall -Wextra -Werror tshirts.cpp TestTshirtsize.cpp -o tshirts.out
         bash .github/workflows/expectfail.sh ./tshirts.out
 
     - name: misaligned fail
       run: |
-        g++ -Wall -Wextra -Werror misaligned.cpp -o misaligned.out
+        g++ -Wall -Wextra -Werror misaligned.cpp TestPrintColorMap.cpp -o misaligned.out
         bash .github/workflows/expectfail.sh ./misaligned.out
 
     - name: alerter fail
       run: |
-        g++ -Wall -Wextra -Werror weatherreport.cpp -o weatherreport.out
+        g++ -Wall -Wextra -Werror weatherreport.cpp TestWeatherReport.cpp -o weatherreport.out
         bash .github/workflows/expectfail.sh ./weatherreport.out
