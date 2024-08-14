@@ -1,16 +1,28 @@
 #pragma once
-#include <gmock\gmock.h>
 #include "weatherreport.h"
 
-namespace WeatherSpace
-{
-    class MockSensor : public IWeatherSensor
-    {
-        public:
-            MOCK_METHOD(int, Humidity, (), (const override));
-            MOCK_METHOD(int, Precipitation, (), (const override));
-            MOCK_METHOD(int, WindSpeedKMPH, (), (const override));
-            MOCK_METHOD(double, TemperatureInC, (), (const override));
-    };
-}
+namespace WeatherSpace {
 
+    /// This is a stub for a weather sensor. For the sake of testing
+    /// we create a stub that generates weather data and allows us to
+    /// test the other parts of this application in isolation
+    /// without needing the actual Sensor during development
+    class SensorStub : public IWeatherSensor {
+        public:
+        int Humidity() const override;
+        int Precipitation() const override;
+        double TemperatureInC() const override;
+        int WindSpeedKMPH() const override;
+    };
+
+    class SensorStubHighPrecipitationLowWindSpeed : public IWeatherSensor {
+        public:
+        int Humidity() const override;
+        int Precipitation() const override;
+        double TemperatureInC() const override;
+        int WindSpeedKMPH() const override;
+    };
+
+    void TestRainy();
+    void TestHighPrecipitationAndLowWindspeed();
+}
