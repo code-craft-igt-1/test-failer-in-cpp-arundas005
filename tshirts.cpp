@@ -1,8 +1,8 @@
-#include <assert.h>
 #include <iostream>
 #include "tshirts.h"
+#include "TestTshirtsize.h"
 
-char size(int cms) {
+char tshirtSizeFromSholderWidthInCMS(int cms) {
     char sizeName = '\0';
     if (cms < 38) {
         sizeName = 'S';
@@ -12,5 +12,11 @@ char size(int cms) {
         sizeName = 'L';
     }
     return sizeName;
+}
+
+int main()
+{
+    testTshirtSizeFromSholderWidthInCMS();
+    return 0;
 }
 
