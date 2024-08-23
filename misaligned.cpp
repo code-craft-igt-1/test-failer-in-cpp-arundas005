@@ -1,6 +1,9 @@
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include "misaligned.h"
 #include "TestPrintColorMap.h"
+
 
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -10,7 +13,12 @@ int colorPairNumber( int majorColorIndex, int minorColorIndex) {
 }
 
 std::string formatOneLine(int colorPairIndex, std::string majorColor, std::string minorColor) {
-    return std::to_string(colorPairIndex) + " | " + majorColor + " | " + minorColor;
+    //Align color map output
+    std::stringstream singleLineOutput;
+    singleLineOutput << std::left << std::setw(5) << colorPairIndex << " | ";
+    singleLineOutput << std::left << std::setw(10) << majorColor << " | ";
+    singleLineOutput << std::left << std::setw(10) << minorColor;
+    return singleLineOutput.str();
 }
 
 void printColorMap() {
