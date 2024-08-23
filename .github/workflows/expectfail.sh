@@ -1,8 +1,9 @@
 #!/bin/bash
 
 if $1; then
-    echo "FALSE POSITIVE! Expected failure but succeeded"
-    exit 1
+    echo "succeess"
 else
-    echo "Failed as expected"
+    echo "Failed"
+
+    exit 1
 fi
