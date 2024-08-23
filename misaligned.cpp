@@ -6,7 +6,7 @@ const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
 int colorPairNumber( int majorColorIndex, int minorColorIndex) {
-    return majorColorIndex * 5 + minorColorIndex;
+    return majorColorIndex * 5 + minorColorIndex + 1;
 }
 
 std::string formatOneLine(int colorPairIndex, std::string majorColor, std::string minorColor) {
